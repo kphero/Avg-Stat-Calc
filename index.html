@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FE Average Stat Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1 class="header-main">FE Average Stat Calculator</h1>
+    </header>
+    <main>
+      <div class="container">
+        <section class="section-input">
+          <div class="select-char">
+            <h2 for="choose" class="header-character">Choose a character:</h2>
+            <div class="img-box">
+              <img
+                class="img-portrait hidden"
+                src="img/img0.png"
+                alt="Character portrait for selected character"
+              />
+            </div>
+            <select name="choose" class="select-choose">
+              <option value="default">None</option>
+              <option value="lyn" class="char0">Lyn</option>
+              <option value="eliwood" class="char1">Eliwood</option>
+              <option value="hector" class="char2">Hector</option>
+            </select>
+            <div class="select-stats">
+              <ul class="select-list">
+                <li>
+                  <p id="class">--</p>
+                </li>
+                <li>
+                  <p class="stat-name">LV:</p>
+                  <p id="level">--</p>
+                </li>
+                <li>
+                  <p class="stat-name">HP:</p>
+                  <p id="hp">--</p>
+                </li>
+              </ul>
+              <div class="img-box-class">
+                <img
+                  src="img/sprite0.png"
+                  class="img-class hidden"
+                  alt="Class sprite for selected character"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="card-stats">
+            <ul class="list-stats">
+              <h2 class="header-secondary">Personal Data</h2>
+              <li class="stat">
+                <p class="stat-name">HP:</p>
+                <p id="bs-0">--</p>
+                <p id="gr-0">[--]</p>
+              </li>
+              <li class="stat">
+                <p class="stat-name">STR:</p>
+                <p id="bs-1">--</p>
+                <p id="gr-1">[--]</p>
+              </li>
+              <li class="stat">
+                <p class="stat-name">SKL:</p>
+                <p id="bs-2">--</p>
+                <p id="gr-2">[--]</p>
+              </li>
+              <li class="stat">
+                <p class="stat-name">SPD:</p>
+                <p id="bs-3">--</p>
+                <p id="gr-3">[--]</p>
+              </li>
+              <li class="stat">
+                <p class="stat-name">LUK:</p>
+                <p id="bs-4">--</p>
+                <p id="gr-4">[--]</p>
+              </li>
+              <li class="stat">
+                <p class="stat-name">DEF:</p>
+                <p id="bs-5">--</p>
+                <p id="gr-5">[--]</p>
+              </li>
+              <li class="stat">
+                <p class="stat-name">RES:</p>
+                <p id="bs-6">--</p>
+                <p id="gr-6">[--]</p>
+              </li>
+            </ul>
+            <ul class="list-stats">
+              <li class="stat">
+                <p class="stat-name">MOV:</p>
+                <p id="mov">--</p>
+              </li>
+              <li class="stat">
+                <p class="stat-name">CON:</p>
+                <p id="con">--</p>
+              </li>
+              <li class="stat">
+                <p class="stat-name">AID:</p>
+                <p id="aid">--</p>
+              </li>
+              <li class="stat">
+                <p class="stat-name">AFF:</p>
+                <img src="#" id="aff" class="hidden" />
+              </li>
+            </ul>
+          </div>
+        </section>
+        <section class="section-output">
+          <div class="select-level">
+            <ul class="list-level">
+              <li>
+                <label for="lvl-in" class="label-level"
+                  >Avg Stat at Level:</label
+                >
+                <input
+                  class="input lvl-in"
+                  name="lvl-in"
+                  type="input"
+                  min="1"
+                  max="20"
+                  maxlength="2"
+                  value="1"
+                  required
+                />
+                <span>/</span>
+                <input
+                  class="input pp-in"
+                  name="pp-in"
+                  type="input"
+                  min="1"
+                  max="20"
+                  maxlength="2"
+                  value="1"
+                  disabled
+                />
+              </li>
+            </ul>
+            <ul class="list-level">
+
+              <li>
+                <label for="pp-cb" class="label-level">Promoted</label>
+                <input class="pp-cb" name="pp-cb" type="checkbox" />
+              </li>
+            </ul>
+            <ul class="list-boosts">
+              <li>
+                <label for="ar-cb">Angelic Robe</label>
+                <input class="sb-cb" name="ar-cb" type="checkbox" />
+              </li>
+              <li>
+                <label for="ed-cb">Energy Drops</label>
+                <input class="sb-cb" name="ed-cb" type="checkbox" />
+              </li>
+              <li>
+                <label for="sk-cb">Secret Book</label>
+                <input class="sb-cb" name="sb-cb" type="checkbox" />
+              </li>
+              <li>
+                <label for="sw-cb">Speedwing</label>
+                <input class="sb-cb" name="sw-cb" type="checkbox" />
+              </li>
+              <li>
+                <label for="gi-cb">Goddess Icon</label>
+                <input class="sb-cb" name="gi-cb" type="checkbox" />
+              </li>
+              <li>
+                <label for="ds-cb">Dracoshield</label>
+                <input class="sb-cb" name="ds-cb" type="checkbox" />
+              </li>
+              <li>
+                <label for="tm-cb">Talisman</label>
+                <input class="sb" name="tm-cb" type="checkbox" />
+              </li>
+              <li>
+                <label for="boots-cb">Boots</label>
+                <input class="sb-cb" name="b-cb" type="checkbox" />
+              </li>
+              <li>
+                <label for="br-cb">Body Ring</label>
+                <input class="sb-cb" name="br-cb" type="checkbox" />
+              </li>
+              <li>
+                <label for="ad-cb">Afa's Drops</label>
+                <input class="sb-cb cb" name="ad-cb" type="checkbox" />
+              </li>
+            </ul>
+            <button class="btn-calc">Calculate</button>
+          </div>
+
+          <div class="select-boosts"></div>
+          <div class="card-stats">
+              <ul class="list-stats">
+                <h2 class="header-secondary">Average Stats</h2>
+                <li class="stat">
+                  <p class="stat-name">HP:</p>
+                  <p id="as-0">--</p>
+                  <p></p>
+                </li>
+                <li class="stat">
+                  <p class="stat-name">POW:</p>
+                  <p id="as-1">--</p>
+                  <p></p>
+                </li>
+                <li class="stat">
+                  <p class="stat-name">SKL:</p>
+                  <p id="as-2">--</p>
+                  <p></p>
+                </li>
+                <li class="stat">
+                  <p class="stat-name">SPD:</p>
+                  <p id="as-3">--</p><p></p>
+                </li>
+                <li class="stat">
+                  <p class="stat-name">LUK:</p>
+                  <p id="as-4">--</p><p></p>
+                </li>
+                <li class="stat">
+                  <p class="stat-name">DEF:</p>
+                  <p id="as-5">--</p><p></p>
+                </li>
+                <li class="stat">
+                  <p class="stat-name">RES:</p>
+                  <p id="as-6">--</p><p></p>
+                </li>
+              </ul>
+              <ul class="list-stats">
+                <li class="stat">
+                  <p class="stat-name">MOV:</p>
+                  <p id="movAvg">--</p>
+                </li>
+                <li class="stat">
+                  <p class="stat-name">CON:</p>
+                  <p id="conAvg">--</p>
+                </li>
+                <li class="stat">
+                  <p class="stat-name">AID:</p>
+                  <p id="aidAvg">--</p>
+                </li>
+                <li class="stat">
+                  <p class="stat-name">AFF:</p>
+                  <img src="#" id="affAvg" class="hidden" />
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>
